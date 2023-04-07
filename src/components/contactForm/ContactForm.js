@@ -1,15 +1,15 @@
 import React from "react";
 
 export const ContactForm = (props) => {
-  const handleNameChange = (e) => {
+  const onNameChange = (e) => {
     props.setName(e.target.value);
   };
 
-  const handlePhoneChange = (e) => {
+  const onPhoneChange = (e) => {
     props.setPhone(e.target.value);
   };
 
-  const handleMailChange = (e) => {
+  const onMailChange = (e) => {
     props.setMail(e.target.value);
   };
 
@@ -19,20 +19,20 @@ export const ContactForm = (props) => {
         type="text"
         placeholder="Enter name"
         value={props.name}
-        onChange={handleNameChange}
+        onChange={onNameChange}
       />
       <input
         type="tel"
         placeholder="Enter phone"
         value={props.phone}
-        onChange={handlePhoneChange}
+        onChange={onPhoneChange}
         // pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
       />
       <input
         type="email"
         placeholder="Enter mail"
         value={props.mail}
-        onChange={handleMailChange}
+        onChange={onMailChange}
       />
       <input type="submit" value="Submit" />
     </form>
