@@ -1,15 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Tile = ({ data }) => {
+export const Tile = ({ tiles }) => {
+  const values = Object.values(tiles);
   return (
-    <div className="tile-container" key={data.title}>
-      {Object.keys(data).map((key) =>
-        key === "title" || key === "name" ? (
-          <p className="tile-title">{data.title || data.name}</p>
-        ) : (
-          <p className="tile">{data[key]}</p>
-        )
-      )}
+    <div className="tile-container">
+      {values.map((tile, index) => (
+        <p className={index === 0 ? "tile-title" : "tile"} key={tile}>
+          {tile}
+        </p>
+      ))}
     </div>
   );
+};
+
+Tile.propTypes = {
+  tiles: PropTypes.object.isRequired,
 };

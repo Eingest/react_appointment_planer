@@ -25,8 +25,9 @@ export const ContactsPage = (props) => {
     });
     if (result) {
       setDuplicateName(true);
+      return;
     }
-  }, [name]);
+  }, [props.contacts, name]);
 
   return (
     <div>
@@ -45,7 +46,7 @@ export const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList list={props.contacts} />
+        <TileList data={props.contacts} />
       </section>
     </div>
   );
