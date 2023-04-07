@@ -20,19 +20,19 @@ export const AppointmentForm = ({
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
 
-  const handleTitleChange = (e) => {
+  const onTitleChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const handleDateChange = (e) => {
+  const onDateChange = (e) => {
     setDate(e.target.value);
   };
 
-  const handleTimeChange = (e) => {
+  const onTimeChange = (e) => {
     setTime(e.target.value);
   };
 
-  const handleContactPickerChange = (e) => {
+  const handleChange = (e) => {
     setContact(e.target.value);
   };
 
@@ -42,19 +42,16 @@ export const AppointmentForm = ({
         type="text"
         placeholder="Enter title"
         value={title}
-        onChange={handleTitleChange}
+        onChange={onTitleChange}
       />
       <input
         type="date"
         value={date}
         min={getTodayString}
-        onChange={handleDateChange}
+        onChange={onDateChange}
       />
-      <input type="time" value={time} onChange={handleTimeChange} />
-      <ContactPicker
-        contacts={contacts}
-        handleChange={handleContactPickerChange}
-      />
+      <input type="time" value={time} onChange={onTimeChange} />
+      <ContactPicker contacts={contacts} handleChange={handleChange} />
       <input type="submit" value="Submit" />
     </form>
   );
