@@ -26,7 +26,7 @@ export const ContactForm = (props) => {
         placeholder="Enter phone"
         value={props.phone}
         onChange={handlePhoneChange}
-        pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
+        // pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"
       />
       <input
         type="email"
